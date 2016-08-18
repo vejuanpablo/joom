@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+<fields name="attribs">
+    <fieldset name="extra-fields" label="TPL_GROUP_EXTRA_FIELDS_LABEL" description="TPL_GROUP_EXTRA_FIELDS_DESC" group="extrafields">
+        <field
+                name="jcontent_director"
+                type="text"
+                label="TPL_EX_CONTENT_DIRECTOR_LABEL"
+                description="TPL_EX_CONTENT_DIRECTOR_DESC"
+                />
+        <field
+                name="jcontent_starring"
+                type="text"
+                label="TPL_EX_CONTENT_STARRING_LABEL"
+                description="TPL_EX_CONTENT_STARRING_DESC"
+                />
+        <field
+                name="jcontent_trailer"
+                type="text"
+                label="TPL_EX_CONTENT_TRAILER_LABEL"
+                description="TPL_EX_CONTENT_TRAILER_DESC"
+                />
+        <field
+                name="jcontent_year"
+                type="text"
+                label="TPL_EX_CONTENT_YEAR_LABEL"
+                description="TPL_EX_CONTENT_YEAR_DESC"
+                />
+    </fieldset>
+</fields>
+</form>

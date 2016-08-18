@@ -1,0 +1,235 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Moviemax Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+
+/* Import Font 
+---------------------- */
+@import url(https://fonts.googleapis.com/css?family=Rubik|Poppins:400,500);
+
+ /* MAIN OFFLINE STYLE
+ ------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0b0f0e ;
+  height: 100%;
+}
+
+body {  
+  color: #222;
+  font-family: Poppins,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+ 
+#frame {
+  background: #fff;
+  border: 1px solid #ebebec;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.024);
+  margin: 150px auto;
+  padding: 0px 60px 60px;
+  position: relative;
+  width: 440px;
+}
+
+#offline-img {
+  padding: 0 0 25px;
+  text-align: left;
+}
+
+#offline-img img{
+  max-width: 100%;
+}
+
+/* Title Offline
+----------------------------- */
+#offline-title {
+  background: #fa4b2a ;
+  display: inline-block;
+  margin: -1px 0 25px 0;
+}
+
+#offline-title h1 {
+  color: #fff;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 10px 15px;  
+}
+
+/* Form Offline
+----------------------------- */
+#offline-content {
+  padding: 0;
+
+}
+.form-offline {
+  margin: 0 -10px;
+}
+
+.form-group {
+  float: left;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.control-label {
+  color: #222;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.control-input {
+  background: transparent;
+  border: 2px solid #ebebec;
+  box-shadow: none;
+  color: #999;
+  height: 44px;
+  line-height: 1.42857;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 12px;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.control-input:focus,
+.control-input:hover,
+.control-input:active {
+  background: none;
+  border: 2px solid #8f8f95;
+  color: #555;
+  outline: none;
+}
+
+.des-offline {
+  line-height: 1.4;
+  padding: 0 0 20px;
+}
+
+/* Remember Login
+------------------------- */
+#form-login-remember {
+  float: none;
+  padding: 4px 0 30px;
+}
+
+#remember {
+  position: relative;
+  top: 1px;
+}
+
+/* Button
+------------------------- */
+#submit-buton {
+  text-align: right;
+}
+
+#submit-buton .button {
+  background:none;
+  border: 2px solid #fa4b2a;
+  color: #fa4b2a;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.0;
+  padding: 11px 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 350ms ease 0s;
+  width: 100%;
+}
+
+#submit-buton .button:hover,
+#submit-buton .button:focus,
+#submit-buton .button:active {
+  background-color: #fa4b2a;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Message system
+----------------------------- */
+#system-message-container {
+  text-align: left;
+  margin-top: 40px;
+}
+
+#system-message {
+  border: 1px solid #fa4b2a;
+  background: rgba(0,0,0,0.8);
+  margin: auto;
+  padding: 20px;
+  width: 585px;
+}
+
+#system-message p {
+  margin: 0;
+  color: rgba(255,255,255, 0.8);
+}
+
+#system-message .close {
+  display: none;
+}
+
+#system-message dt,
+#system-message .alert-heading {
+  color: #fff;
+  border-bottom: 1px solid #fa4b2a;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.message {
+  margin-left: 0;
+}
+
+.message ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*Responsive
+------------------------------*/
+/* Control screen width 640px */
+@media screen and (max-width: 640px ) {
+  #frame {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+  }
+
+  #system-message {
+    padding: 10px;
+    width: auto;
+  }
+}
+
+/*Control screen mobile */
+@media screen and (max-width: 480px ) {
+  .form-group {
+    width: 100%;
+  }
+}

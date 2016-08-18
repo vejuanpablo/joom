@@ -1,0 +1,146 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+ 
+// VARIABLES & MIXINS
+// ------------------
+@import "../../../less/vars.less"; // Modify this for custom colors, font-sizes, etc
+
+// ------------------------------------------------
+// SLIDESHOW STYLE OWL
+// ------------------------------------------------
+.acm-slideshow .owl-carousel {
+  cursor: move;
+  padding: 0;
+  overflow: hidden;
+  background: @gray-dark-max;
+
+  .owl-wrapper-outer {
+    z-index: 0;
+  }
+
+  .item {
+    position: relative;
+
+    &:before {
+      background: rgba(0,0,0,0.6);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  // Slideshow content
+  .slider-content {
+    background: transparent;
+    position: absolute;
+    bottom: @t3-global-margin * 6;
+    left: 0;
+    text-align: center;
+    width: 100%;
+
+    .slider-content-inner {
+      padding: 0 @t3-global-padding * 4;
+
+      // Tablet/Mobile view
+      @media (max-width: @screen-sm-max) {
+        padding: 0 @t3-global-padding;
+      }
+
+      // Lable highlight
+      > span {
+        background-color: @brand-primary;
+        color: @white;
+        display: inline-block;
+        font-size: 12px;
+        margin-bottom: 20px;
+        padding: 5px 8px;
+        text-transform: uppercase;
+        font-weight: @font-weight-medium;
+      }
+
+      // Title
+      > h1 {
+        color: @white;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 52px;
+        margin-top: 0;
+        margin-bottom: @t3-global-margin;
+        text-transform: uppercase;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+        // Mobile view
+        @media (max-width: @screen-sm-max) {
+          font-size: @font-size-h2;
+          line-height: 40px;
+        }
+
+        a {
+          color: @white;
+        }
+      }
+
+      // Description
+      > p {
+        color: rgba(255,255,255,0.8);
+        padding: 0 @t3-global-padding * 2;
+        margin-bottom: @t3-global-margin * 2;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        font-size: @t3-font-size-small;
+        line-height: 1.7;
+
+        // Desktop view
+        @media (min-width: @screen-lg-min) {
+          padding: 0 @t3-global-padding * 12;
+        }
+      }
+    }
+  }
+
+  // Slide control
+  .owl-controls {
+    left: 0;
+    bottom: @t3-global-padding;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  // Effect
+  .ja-animation {
+    transform: translateY(70%);
+      -webkit-transform: translateY(70%);
+      .opacity(0);
+      transition: all 1.3s;
+      transition-property: transform, opacity;
+
+    &[delay-transtion="1"] {
+       transition-delay: 100ms;
+    }
+
+    &[delay-transtion="2"] {
+       transition-delay: 300ms;
+    }
+
+    &[delay-transtion="3"] {
+       transition-delay: 600ms;
+    }
+
+    &[delay-transtion="4"] {
+       transition-delay: 900ms;
+    }
+  }
+
+  .owl-item.active {
+    .ja-animation {
+      transform: translateY(0);
+        -webkit-transform: translateY(0);
+        .opacity(1);
+    }
+  }
+}

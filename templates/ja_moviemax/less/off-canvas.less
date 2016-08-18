@@ -1,0 +1,297 @@
+/**
+* $JA#COPYRIGHT$
+*/
+
+// VARIABLES & MIXINS
+// ------------------
+@import "vars.less"; // Include Variables and Mixins
+
+
+// EXTEND STYLE IN BASE
+// --------------------
+@import "../../../plugins/system/t3/base-bs3/less/off-canvas.less";
+
+
+
+//
+// OFF-CANVAS
+// -------------------------------------
+.t3-wrapper {
+  overflow: hidden;
+}
+
+// Toggle Button
+// -------------------
+.off-canvas-toggle {
+  background-color: @white;
+  border-radius: 0;
+  border: 0;
+  border-right: 1px solid @t3-border-color;
+  color: @black;
+  font-size: 16px;
+  padding: 0;
+  width: @navbar-height;
+  height: @navbar-height;
+  line-height: @navbar-height;
+
+  // Block level forms elements on Mobile
+  @media screen and (min-width: @screen-sm) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 102;
+  }
+  
+  &:focus,&:hover,&:active {
+    background-color: @white;
+    border-right-color: @t3-border-color;
+    outline: none;
+    color: @brand-primary;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  // Block level forms elements on Mobile
+  @media screen and (max-width: @screen-xs-max) {
+    
+  }
+}
+
+
+//
+// OFF-CANVAS CONTENT STYLES
+// -------------------------------------
+.t3-off-canvas {
+
+  .off-canvas-open & {
+    overflow: hidden;
+  }
+
+  // Generic
+  // -----------------------------------
+  background: @t3-off-canvas-background;
+  color: @t3-off-canvas-text-color;
+
+
+  // Header
+  // -----------------------------------
+  .t3-off-canvas-header {
+    background: @t3-off-canvas-header-background;
+    color: @t3-off-canvas-header-text-color;
+    padding: 0 0 0 @t3-global-padding;
+    height: 40px;
+    border-bottom: 1px solid @table-border-color;
+
+    // Title
+    h2 {
+      margin: 0;
+      line-height: 40px;
+      font-size: @font-size-base;
+      font-weight: @font-weight-medium;
+      text-transform: uppercase;
+    }
+
+  }
+
+  // Close Button
+  .close {
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    background: darken(@t3-off-canvas-header-background, 20%);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+
+  // Body
+  // -----------------------------------
+  .t3-off-canvas-body {
+    padding: 0;
+
+    // Links
+    // ------------
+    a {
+      color: @t3-off-canvas-link-color;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: @t3-off-canvas-link-hover-color;
+        text-decoration: none;
+      }
+
+      &:focus {
+        .tab-focus();
+      }
+    }
+
+
+    // Scroll
+    // ------
+    .mCSB_scrollTools .mCSB_draggerRail {
+      background-color: @white; background-color: rgba(255,255,255,0.4);
+      filter: "alpha(opacity=40)"; -ms-filter: "alpha(opacity=40)";
+    }
+
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      background-color: @black; background-color: rgba(0,0,0,0.75);
+      filter: "alpha(opacity=75)"; -ms-filter: "alpha(opacity=75)"; 
+    }
+
+    .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+      background-color: @black; background-color: rgba(0,0,0,0.85);
+      filter: "alpha(opacity=85)"; -ms-filter: "alpha(opacity=85)"; 
+    }
+    .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+    .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+      background-color: @black; background-color: rgba(0,0,0,0.9);
+      filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)"; 
+    }
+
+
+    // Navigations
+    // ------------
+    .nav {
+
+      // Nav Items
+      > li {
+        > a {
+          padding: 15px @t3-global-padding;
+          text-transform: uppercase;
+          display: block;
+          font-weight: @font-weight-medium;
+          color: @gray-dark;
+          // Hover state
+          &:hover,
+          &:focus {
+            background: none;
+            color: @link-hover-color;
+          }
+          // The caret
+          .caret {
+            display: none;
+          }
+        }
+
+        > span {
+          padding: 15px @t3-global-padding;
+          text-transform: uppercase;
+          display: block;
+          font-weight: @font-weight-medium;
+          color: @gray-dark;
+        }
+
+        // Disabled state
+        &.disabled > a {
+          // Hover state
+          &:hover,
+          &:focus {
+          }
+        }
+
+        & + li {
+          border-top: 1px solid @t3-border-color;
+          margin: 0;
+        }
+      }
+
+      // Open dropdowns
+      .open > a {
+        &,
+        &:hover,
+        &:focus {
+          background: none;
+          color: @link-hover-color;
+          // The caret
+          .caret {
+          }
+        }
+      }
+
+      // active dropdowns
+      .active > a {
+        &,
+        &:hover,
+        &:focus {
+          background: none;
+          color: @link-hover-color;
+          // The caret
+          .caret {
+          }
+        }
+      }
+
+      //End
+    }
+
+
+    .dropdown-menu .active a {
+      background: transparent;
+    }
+
+    // Dropdown Menu
+    .dropdown-menu {
+      background: none;
+      padding: 5px @t3-global-padding;
+      border-top: 1px solid @t3-border-color;
+
+      li {
+        > a, span {
+          padding: 10px 0;
+          display: block;
+          font-weight: @font-weight-medium;
+          color: @gray-dark;
+          text-transform: none;
+        }
+
+        > a:hover, 
+        > a:active, 
+        > a:focus {
+          background: none;
+          color: @link-hover-color;
+        }
+      }
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      margin: 0;
+      font-size: @t3-font-size-smaller;
+    }
+
+
+    // Modules
+    // ------------
+    .t3-module {
+      margin-bottom: @line-height-computed;
+      padding: 0;
+    }
+
+    .module-inner,
+    .module-ct {
+      padding: 0;
+    }
+
+    .module-title  {
+      margin-bottom: @line-height-computed / 2;
+      padding: 0;
+    }
+
+  // End Off-Canvas Body
+  }
+
+  .t3-off-canvas-header + .t3-off-canvas-body {
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 100%;
+  }
+
+// End Off-Canvas Content Styles
+}

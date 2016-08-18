@@ -1,0 +1,56 @@
+/**
+* $JA#COPYRIGHT$
+*/
+
+// RTL STYLES
+// ------------------------------------------------------
+
+// Smart search
+// ------------------------------
+
+.off-canvas body > .autocompleter-choices {
+  width: 0px;
+  left: auto;
+}
+
+ul.autocompleter-choices li {
+  text-align: right;
+}
+
+// Tab Items
+// ------------------------------
+.tag-category #adminForm.form-inline > p {
+  padding-top: @t3-global-padding;
+}
+
+
+.article-intro,
+.article-content {
+
+  // Add proper margin
+  img[align=left],
+  .img_caption.left,
+  .pull-left.item-image {
+    margin: 0 @t3-global-margin*1.5 @t3-global-margin 0;
+  }  
+
+  img[align=right],
+  .img_caption.right,
+  .pull-right.item-image {
+    margin: 0 0 @t3-global-margin @t3-global-margin*1.5 ;
+  }
+
+}
+
+// Fix Captcha for User misssing pass and email
+// ------------------------------
+
+html[dir="rtl"] #user-registration {
+  .form-group + .form-group {
+    padding: 0 20px 0 60px ;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 20px 0px 0 60px ;
+    }
+  }  
+}

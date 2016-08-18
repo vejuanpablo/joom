@@ -1,0 +1,161 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Moviemax Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+*/
+
+ /* Import Font 
+---------------------- */
+@import url(https://fonts.googleapis.com/css?family=Rubik|Poppins:400,500,700);
+@import url(../fonts/font-awesome/css/font-awesome.min.css);
+
+ /* Common Error Page
+ ------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 0;
+
+}
+
+html {
+  background-color: #27282a;
+  height: 100%;
+}
+
+body { 
+  background-color: #27282a; 
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+
+.error {  
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+
+/* Code Error Page
+----------------------------- */
+.error-code {
+  color: #fff;
+  font-family: 'FontAwesome', sans-serif;  
+  margin-bottom: 30px;
+}
+
+.error-code span {
+  background: #fa4b2a;
+  display: inline-block;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px 20px 10px;
+}
+
+.error-code span + span {
+  margin-left: 3px;
+}
+
+.error-code span.error-0 {
+  font-size: 0;
+  padding: 17px 20px 18px; 
+}
+
+.error-code span.error-0::before {
+  content: "\f119";
+  font-size: 96px; 
+}
+
+.error-code span.error-0 + span.error-0 {
+  font-size: 96px;
+  padding: 9px 20px 10px; 
+}
+
+.error-code span.error-0 + span.error-0::before {
+  content: " ";
+  font-size: 0; 
+}
+
+/* Message Error Page
+----------------------------- */
+.error-message h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+#errorboxbody {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+#errorboxbody p{
+  color: rgba( 255, 255, 255, 0.8);
+  margin: 5px 0 23px;
+}
+
+#errorboxbody a {
+  background:none;
+  border: 2px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.0;
+  padding: 11px 85px 9px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#errorboxbody a:hover,
+#errorboxbody a:focus,
+#errorboxbody a:active {
+  color: #222;
+  cursor: pointer;
+}
+
+#errorboxbody a::before {
+  background-color: #fff;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 350ms ease 0s;
+  width: 100%;
+  z-index: -1;
+}
+
+#errorboxbody a:hover::before,
+#errorboxbody a:focus::before,
+#errorboxbody a:active::before {
+  height: 100%;
+}
+
+/* RTL STYLES
+------------------------------------------------------ */
+ 
+html[dir="rtl"] .error-code span + span {
+    margin-left: 0px;
+    margin-right: 3px;
+}
